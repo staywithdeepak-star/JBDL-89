@@ -1,0 +1,39 @@
+Quick recap
+
+The meeting covered fundamental Java concepts including polymorphism, method overriding, and access modifiers, with detailed explanations of compile-time and runtime versions along with practical examples. The discussion explored the use of final keywords in Java for variables, functions, and classes, including their importance in maintaining code immutability and preventing unintended modifications. The session concluded with explanations of static and non-static blocks in Java, including their execution order and initialization sequence, along with coverage of the singleton design pattern and static inner classes.
+
+
+Next steps
+- GeeksforGeeks: Push the code discussed in the session to the GitHub repo.
+- All participants: Join the shared WhatsApp group for questions and discussions.
+- GeeksforGeeks: Cover remaining core Java topics (internal working of HashMap, example of person class, exceptions, try-catch/finally blocks) in tomorrow's session.
+
+
+Summary
+
+Polymorphism: Compile-time and Runtime
+The instructor explained polymorphism, covering both compile-time and runtime versions. Compile-time polymorphism, also known as method overloading, allows different functions with the same name but different signatures to be defined in a class, though the compiler will not allow duplicate functions with identical signatures. Runtime polymorphism, demonstrated through method overriding, occurs when a parent class method is implemented in a child class, with the JVM deciding at runtime which implementation to call based on the object's type. The instructor provided examples and explained that while return types can influence method selection at runtime, they do not affect compile-time polymorphism.
+
+
+Method Overriding and Polymorphism Basics
+The discussion focused on method overriding and polymorphism, with GeeksforGeeks explaining that method overriding occurs when a subclass provides a specific implementation of a method that is already provided by its parent class, while method overloading involves using the same method name with different parameters. They clarified that in method overriding, the return type and parameters must match between the parent and child classes, and used examples like Uber's pricing model to demonstrate how inheritance and overriding work in real-world scenarios. The session concluded with a clarification that method signatures refer only to the parameters, not the return type, and that different return types for the same method name are not allowed in either method overriding or overloading.
+
+
+Java Method Overriding Access Modifiers
+The discussion focused on method overriding and access modifiers in Java. GeeksforGeeks explained that when overriding a method, changing the access modifier from protected to public in the child class is allowed, but not vice versa, as this would create a weaker access. They used examples to demonstrate why reducing the access modifier in the child class is not permitted, as it could lead to runtime errors. The explanation was reinforced with analogies and code examples to illustrate the concept of access modifiers and their implications in inheritance.
+
+
+Java Final Keyword Concepts
+The discussion focused on the use of the final keyword in Java, which can be applied to variables, functions, and classes. Final variables, also known as constants, can only be assigned values at the time of declaration or within a constructor, and cannot be modified afterward. Final functions, on the other hand, cannot be overridden in subclasses, preventing changes to the original method's behavior. The instructor explained these concepts with examples and emphasized their importance in ensuring immutability and preventing unintended modifications in code.
+
+
+Java Final Classes and Methods
+The discussion focused on the use of final classes and methods in Java. Kadambini explained that final classes cannot be inherited, and Gaurav added that final methods cannot be overridden. The group discussed examples of final classes, including String and wrapper classes like Integer and Boolean. They explored the reasoning behind making these classes final, such as preventing potential issues with memory management and allowing library developers to control their core functionalities. The conversation concluded with a brief mention of static and non-static blocks in Java, though this was not fully explored.
+
+
+Java Block Execution Order
+The discussion focused on the execution order of static and non-static blocks in Java. GeeksforGeeks explained that static blocks are executed first, followed by the main function, and then non-static blocks and constructors. The order of execution does not change regardless of where the blocks are defined in the class. The group also discussed how instance variables are initialized before non-static blocks and constructors, and how the order of execution affects the values assigned to variables.
+
+
+Java Design Patterns and Initialization
+The meeting covered several key topics in Java programming, including object initialization, the singleton design pattern, and static classes. Gaurav explained how variables are initialized and available in objects before assignment, and demonstrated the singleton pattern using a private constructor and a static factory method. The class can create only one instance by ensuring the constructor is private and providing a public static method to retrieve the instance. The discussion also covered static inner classes, which can be instantiated without an outer class instance, and their use in Java libraries like HashMap. The session concluded with plans to cover remaining core Java topics like HashMap internals, exceptions, and try-catch blocks in the next meeting.
