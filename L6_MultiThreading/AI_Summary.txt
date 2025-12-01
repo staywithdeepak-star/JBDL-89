@@ -1,0 +1,58 @@
+Quick recap
+The instructor began the sixth lecture on multi-threading after discussing lambdas and streams in the previous session, covering computer storage types and their characteristics. The discussion explored how processes and threads work in computer systems, including explanations of parallelism, concurrency, and thread management concepts. The lecture concluded with detailed coverage of Java threading concepts, including thread creation, priorities, and execution workflows, along with demonstrations of different thread creation methods and upcoming topics for the next class session.
+
+
+Next steps
+- GeeksforGeeks: Push today's multi-threading code to GitHub
+- Students: Google what are some use cases that can be solved using background threads or what are being solved by background threads currently by Java
+- Students: Read about Mark and Sweep algorithm for garbage collection
+- GeeksforGeeks: Complete multi-threading plus parallel streams by next week
+- GeeksforGeeks: Cover thread.java extending example, join, sleep functions, and thread pool executor in next class
+- GeeksforGeeks: Show major project example that takes 3GB memory in second-last session
+
+
+Summary
+
+Understanding Computer Storage Types
+The instructor began the sixth lecture on multi-threading after discussing lambdas and streams in the previous session. They explained the different types of computer storage, including hard disks (SSDs for Mac users), RAM (main memory), and CPU registers, with a focus on their sizes, volatility, and data persistence characteristics. The instructor emphasized that RAM is volatile and data is only stored there temporarily, while hard disks can 
+store data indefinitely until manually deleted. They also explained that CPU registers are the smallest and fastest storage, located inside the processor.
+
+
+Computing Storage and Process Basics
+The discussion covered the differences between CPU registers, main memory, and disk storage in terms of speed, storage size, and cost, with disk being the cheapest and slowest storage option. The conversation then moved to explaining how processes and threads work in computer systems, with a single processor able to run only one process at a time but capable of executing multiple threads simultaneously through parallel processing. The instructor used Google Chrome as an example to demonstrate how a single process can create multiple threads to handle different operations concurrently, explaining the distinction between parallelism and concurrency in computing.
+
+
+Understanding Parallelism and Concurrency
+The discussion focused on explaining the concepts of parallelism and concurrency in computing. GeeksforGeeks explained that parallelism involves running multiple processes or threads on different processors or cores, while concurrency creates the illusion of simultaneous execution through context switching on a single processor. They used a metaphor of people waiting to sit on a chair to illustrate context switching, where only one process can execute at a time but is quickly replaced by another. The conversation also touched on how operating systems manage CPU scheduling and how applications like IntelliJ and Chrome utilize system resources, with IntelliJ being noted as a memory-intensive application.
+
+
+Thrashing and Thread Management
+GeeksforGeeks explained the concept of thrashing in multi-threaded environments, where too many threads can lead to inefficient CPU usage as threads spend more time context switching than executing. They demonstrated how closing memory-intensive applications like Google Chrome and IntelliJ can free up significant memory, and discussed how thread scheduling works with a round-robin algorithm that ensures fair access to CPU cores. The discussion concluded with an explanation of starvation, where a thread waits too long to execute due to other threads occupying the CPU, and emphasized the importance of creating an appropriate number of threads that can be effectively managed by the system.
+
+
+Java Thread Management Overview
+GeeksforGeeks explained how Java programs become processes when executed and demonstrated this using a CPU activity monitor. They discussed how Java applications are internally broken down into threads by the JVM, showing multiple threads in a debugger window. GeeksforGeeks also explained the concept of thread groups and how threads are created and managed within these groups, including the main thread group that all application threads belong to. Anuj asked about customizing thread priorities and execution time in Java programming, to which GeeksforGeeks responded by explaining how applications like Chrome and Zoom use threads for basic execution and user interaction.
+
+
+Java Thread Priority Concepts
+The discussion focused on Java threading concepts, where GeeksforGeeks explained that developers can control the priority of threads they create but not those created by the JVM. They clarified the difference between foreground and background threads, with foreground threads keeping the application running until completion while background threads can be terminated without stopping the application. The explanation included an analogy comparing threads to office employees, with foreground threads representing active workers and background threads representing support staff.
+
+
+Java Threads and Garbage Collection
+The discussion focused on Java threads, particularly foreground and background threads, with an emphasis on the garbage collector as an example of a background thread that manages memory cleanup using the Mark and Sweep algorithm. The conversation then moved to how to create custom threads in Java, including an explanation of the Thread class and its currentThread() method, which is implemented as a native function to access hardware-level thread information. The instructor demonstrated printing thread information and explained how the toString() method is overridden in the Thread class to provide meaningful output when printing thread objects.
+
+
+Java Thread Creation and Priorities
+The discussion focused on thread priorities and creation in Java. GeeksforGeeks explained how threads are prioritized with a default priority of 5, ranging from 1 to 10, and demonstrated creating a new thread T1 with its initial state before and after starting. The group discussed whether T1 was created and running, with GeeksforGeeks using a debugger to show that the thread was created but not yet started, and clarified that to execute code in a new thread, the start() method must be called.
+
+
+Java Thread Execution Workflow
+GeeksforGeeks explained the workflow of thread execution in Java, highlighting the sequence from the user class calling thread.start to the native print function. They discussed how the target in the thread's parameterized constructor is initially set to null and how this prevents a null pointer exception when the run function is called. GeeksforGeeks demonstrated this process using a debugger, showing how thread zero is created and runs without calling the target.run function due to the null target.
+
+
+Java Thread Execution Differences
+The discussion focused on understanding thread execution in Java, particularly comparing Java 8 and Java 17 versions. GeeksforGeeks explained that in Java 8, even if a Runnable object is not passed, the thread starts and attempts to execute the run function, whereas in Java 17, the thread does not start if a Runnable is not provided. They demonstrated creating a Runnable implementation and showed how to override the run method to execute code in a separate thread. The conversation also covered the difference between using Runnable and extending the Thread class for creating threads.
+
+
+Java Thread Creation Variations
+The instructor explained the different variations of thread creation in Java, focusing on passing runnable targets and thread names. They demonstrated how to set thread priorities and make threads daemon or non-daemon, showing how these settings affect execution order and thread lifecycle. The instructor also covered lambda expressions as an alternative to anonymous inner classes for thread creation, and mentioned plans to cover thread pool executors and parallel streams in the next class session.
