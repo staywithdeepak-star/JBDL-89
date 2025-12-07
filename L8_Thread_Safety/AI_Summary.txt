@@ -1,0 +1,58 @@
+Quick recap
+The meeting focused on understanding thread safety and race conditions in multithreading, with discussions around critical sections, locks, and synchronization mechanisms to ensure consistent access to shared resources. The group explored various Java programming concepts including volatile keywords, thread-safe collections, and the introduction of virtual threads in Java 21, along with demonstrations of thread pool executors and task management. The session concluded with plans to address additional topics like Stripe Executor Service, parallel streams, generics, and exception handling in future classes.
+
+
+Next steps
+- GeeksforGeeks: Push the code to GitHub after the class
+- GeeksforGeeks: Cover parallel streams, generics examples, and exception handling in the next class
+- GeeksforGeeks: Help Swathi understand stripe executor service separately via private message
+- Students: Practice questions using manual thread creation and executor service during the week
+- Students: Cross-check with syllabus to identify any remaining topics not covered
+
+
+Summary
+
+
+Thread Safety and Race Conditions
+The instructor discussed thread safety and race conditions using a bank account example. They explained how multiple threads accessing shared resources can lead to inconsistent results due to the order of execution, using a scenario where two transactions (deposit and withdrawal) could yield different final balances depending on which operation occurs first. The instructor then asked the class what would be a better approach to ensure consistency, suggesting that transactions should be executed in a sequence that maintains the integrity of the shared resource.
+
+
+Critical Section and Locking
+The discussion focused on the critical section problem in multithreading, where multiple threads access shared resources. The instructor explained that while multiple threads reading a shared resource is safe, inconsistencies can occur when one thread is writing. They introduced the concept of a lock to prevent other threads from accessing the shared resource while one thread is updating it, ensuring that all threads read the most up-to-date values. The instructor also clarified that taking a lock does not make the code sequential, as threads can still execute in parallel, but only one thread can access the critical section at a time.
+
+
+Thread Safety and Parallelism Explained
+The discussion focused on explaining parallelism and thread safety in programming. Kadambini explained that while threads can execute independently, accessing shared resources requires sequential execution to maintain consistency. They discussed implementing a bank account example with two threads, one for deposit and one for withdrawal, to demonstrate potential race conditions and the need for thread safety. The explanation also covered the concept of deadlock, emphasizing that it occurs when threads form a cycle waiting for resources that cannot be broken without killing a thread.
+
+
+Java Bank Account Multi-threading Demo
+GeeksforGeeks explained a multi-threaded Java program that simulates a bank account with deposit and withdrawal operations. The program creates two threads, T1 and T2, to perform these operations, and demonstrates how thread execution can appear sequential even when running in parallel due to lightweight operations. To illustrate potential race conditions, GeeksforGeeks added sleep statements to delay thread execution and showed that with only two threads, the program consistently maintains account balance accuracy. The discussion concluded with plans to test the program with more threads to demonstrate possible inconsistencies.
+
+
+Thread Synchronization Techniques Explained
+GeeksforGeeks explained how multiple threads can create inconsistencies when accessing shared resources, using a code example where threads performed parallel operations on a shared balance. They demonstrated that adding sleep statements helped reveal the inconsistencies, which occurred when thread operations were not executed sequentially. To resolve this, GeeksforGeeks introduced the concept of critical sections and synchronization, showing two approaches: using synchronized blocks for specific sections of code and making entire methods synchronized to ensure threads execute sequentially.
+
+
+Java Thread Synchronization Explained
+The discussion focused on understanding thread synchronization in Java, particularly how the synchronized keyword affects the execution of threads when working with shared and non-shared resources. GeeksforGeeks explained that when synchronized is applied to a function, it ensures that only one thread can execute that function at a time for a shared resource, making it sequential for those threads. However, for different objects (non-shared resources), threads can execute in parallel. The group also explored the implications of using synchronized at the class level versus the object level, noting that a class-level lock affects all instances of the class, making all threads sequential if they are accessing the same class.
+
+
+Java Synchronization Concepts Explained
+The discussion focused on understanding the difference between class-level and object-level synchronization in Java, using real-world examples like BookMyShow and ATM machines to illustrate these concepts. GeeksforGeeks explained that class-level synchronization restricts multiple instances of a class from executing simultaneously, while object-level synchronization controls access to shared resources by different threads. The group discussed how synchronization ensures thread safety and prevents race conditions, with Aryan suggesting that database connections should be synchronized at the class level to maintain data consistency.
+
+
+Java Thread Safety Concepts
+The discussion focused on thread safety in Java, explaining that the volatile keyword improves visibility of a variable's value by writing it directly to main memory but does not enforce thread safety. The instructor clarified that while volatile can prevent stale value access, it does not ensure sequential access to shared resources, which requires the synchronized keyword. The conversation concluded with a question about thread-safe data structures, though no specific examples were provided in the transcript.
+
+
+Java Thread Safety and Virtual Threads
+The discussion focused on Java's thread-safe collections and data structures. GeeksforGeeks explained the differences between Vector and ArrayList, synchronized HashMap and Hashtable, and StringBuilder and StringBuffer, emphasizing that Hashtable and StringBuffer are thread-safe while ArrayList and StringBuilder are not. The conversation then shifted to Java 21's introduction of virtual threads, which are lightweight threads managed by the 
+JVM rather than the operating system, contrasting with traditional platform threads. The instructor demonstrated how to create virtual threads using the Thread class's new offVirtual method in Java 21.
+
+
+Understanding Virtual Threads in JVM
+The discussion focused on virtual threads, explaining that unlike regular threads, virtual threads do not execute on CPU cores and are managed by the JVM, which assigns them to cores as needed. The JVM uses virtual threads for I/O operations and CPU-intensive tasks, while platform threads handle heavy computations. The instructor demonstrated creating and managing virtual threads using lambda expressions and explained that while virtual threads are beneficial for I/O tasks, they are not widely adopted yet, with only newer companies exploring their use. The session concluded with an introduction to executor services and thread pool executors as efficient ways to manage tasks across a limited number of threads.
+
+
+Efficient Thread Management with ExecutorService
+The discussion focused on Java's ExecutorService and ThreadPoolExecutor, where GeeksforGeeks explained how to manage threads more efficiently through abstraction layers rather than manual thread creation. The instructor demonstrated how to create a fixed thread pool and submit tasks using Callable and Runnable interfaces, showing that ExecutorService can significantly improve performance compared to manual thread management, especially with large numbers of tasks. The session concluded with Swathi raising a question about Stripe Executor Service, which the instructor agreed to address separately, and confirmed that parallel streams, generics, and exception handling remain as topics to be covered in the next class.
