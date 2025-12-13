@@ -1,0 +1,35 @@
+Quick recap
+
+The meeting covered two main topics: parallel streams and exception handling in Java. The instructor explained the differences between parallel and sequential streams, demonstrating how parallel streams can be more efficient for certain operations but may produce inconsistent results due to their non-deterministic nature. The discussion included examples of using parallel streams for filtering and mapping data, and highlighted when parallel streams should and shouldn't be used. The second half of the meeting focused on exception handling, covering the distinction between checked and unchecked exceptions, and how to properly handle exceptions using try-catch blocks and the throws keyword. The instructor emphasized that developers should only handle checked exceptions, as unchecked exceptions cannot be caught and handled at compile time. The session concluded with a brief overview of error handling in Java, noting that errors are unrecoverable conditions that typically require system restarts, while exceptions are conditions that can be handled within the application.
+
+
+Next steps
+- GeeksforGeeks: Push the code to GitHub after the session
+- GeeksforGeeks: Start Maven topic in tomorrow's class
+- Students: Look up wait and notify functions in Thread.java documentation on their own
+- Students: Read about different exit codes and their meanings
+
+Summary
+
+Java Parallel Streams Performance Optimization
+The instructor discussed parallel streams in Java, explaining how they differ from sequential streams and when to use them for performance optimization. They demonstrated a code example calculating the sum of squares of even numbers, showing that while sequential streams execute operations in order, parallel streams distribute the work across multiple threads. The instructor also explained method referencing and lambda functions, and demonstrated how to convert a sequential stream to a parallel stream using the .parallel() function. They concluded by comparing the performance of sequential and parallel streams, noting that while the difference is minimal for small datasets, parallel streams become more efficient with larger datasets due to thread parallelism.
+
+
+Java Stream Behavior Analysis
+The discussion focused on understanding the behavior of parallel and sequential streams in Java, particularly when using terminal operations like findFirst and findAny. GeeksforGeeks explained that findFirst in parallel streams waits for all threads to complete before determining the order of the first element, which can be inefficient for large datasets, unlike sequential streams that short-circuit once the first element is found. In contrast, findAny in parallel streams evaluates all elements concurrently and returns the first match found by any thread, which can be more efficient for operations like checking if a character exists in a large file. The team concluded that sequential streams are preferable for finding the first occurrence of an element, while parallel streams are better suited for checking if any occurrence exists.
+
+
+Parallel Streams: Benefits and Pitfalls
+The discussion focused on understanding when parallel streams are beneficial and when they can be disadvantageous, particularly in scenarios like finding the first occurrence of an element, where sequential streams might perform better. It was explained that parallel streams can lead to inconsistent results due to the non-deterministic nature of thread execution, especially when using unordered data structures like sets. The importance of considering factors such as the type of terminal operation, the nature of the source data structure, and the use of thread-safe data structures was emphasized. The conversation concluded with a reminder not to use thread-unsafe data structures in parallel streams to avoid data inconsistencies.
+
+
+Java Exceptions: Checked vs Runtime
+The discussion focused on different types of exceptions in Java, particularly runtime and checked exceptions. GeeksforGeeks explained that runtime exceptions, such as null pointer and index out of bounds, occur during runtime and do not require explicit handling by developers, while checked exceptions, like I/O and SQL exceptions, must be handled as they are part of the code's compile-time contract. The instructor emphasized that good developers aim to eliminate runtime exceptions from their code, as these are not caught by the compiler and can lead to unexpected errors.
+
+
+Java Exceptions and Error Handling
+The instructor explained the difference between exceptions and errors in Java, noting that while exceptions can be handled by the JVM and code, errors like OutOfMemoryError and StackOverflowError are not typically handled and require system-level intervention. They discussed the two main ways to handle checked exceptions: using try-catch blocks to catch and handle exceptions at runtime, and using the throws keyword to declare that a method may throw exceptions without handling them. The instructor demonstrated how to use try-catch blocks with a file I/O example, showing how to catch and print stack traces to diagnose and handle exceptions effectively.
+
+
+Java Exception Handling Overview
+The instructor provided a comprehensive overview of exception handling in Java, covering try-catch blocks, the finally block, and the use of the throws keyword. They explained the difference between checked and unchecked exceptions, and discussed best practices for handling exceptions at appropriate levels in the code. The instructor also covered the importance of properly closing resources using the finally block and emphasized that unnecessary stack trace printing can be costly in terms of resources. They concluded by mentioning that the next topics would be Maven and advanced thread concepts, which would not be covered in detail in this course.
