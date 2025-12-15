@@ -1,0 +1,43 @@
+Quick recap
+
+The meeting focused on understanding Maven, a build management tool for Java projects, and its advantages over manual dependency management. The instructor demonstrated how Maven automates the process of downloading and managing dependencies, including parent dependencies, through the POM.xml file. They explained the structure of Maven repositories, including local, central, and remote repositories, and how Maven resolves dependencies in a specific order. The discussion covered the benefits of using Maven for scalability and error prevention, as well as the trade-offs between using open-source central repositories and private remote repositories. The instructor also explained how Maven optimizes the download process by checking local and remote repositories before accessing the central repository. The session concluded with a discussion on the pros and cons of different repository management strategies, highlighting the balance between cost and deployment time.
+
+Next steps
+
+- GeeksforGeeks: Push the two example project folders to Git for students' reference.
+- All students: Refer to the pushed code on Git to understand the Maven example and non-Maven example projects.
+- All students: In the next class, continue with learning Maven's lifecycle and plugins as announced.
+
+Summary
+
+Maven and Database Integration Basics
+
+The instructor introduced a session on Maven, explaining its importance for developing applications, particularly with frameworks like Spring Boot. They demonstrated creating a table in a MySQL database using SQL commands and discussed the client-server architecture. The instructor also covered how to create a table using a Java application, introducing concepts like JDBC and the DriverManager interface. They mentioned that they would show how to perform the same tasks in Java code as they had done with SQL commands.
+
+
+JDBC Database Connection Overview
+The discussion focused on Java Database Connectivity (JDBC), a protocol used to connect Java applications to SQL databases. The instructor explained that JDBC URLs start with "jdbc:", followed by the subprotocol indicating the database type, and the subname specifying the host and port. They demonstrated connecting to a MySQL database using the default port 3306 and explained how databases use usernames and passwords for authentication. The instructor also covered how to create a database connection, create a statement, and execute SQL queries in Java code, noting that JDBC throws checked exceptions which need to be handled using try-catch blocks or the throws keyword.
+
+
+Database Connectivity and JDBC Driver
+The team discussed issues with database connectivity and exception handling in their Java application. They identified that the "no suitable driver found" error was due to missing database-specific JDBC drivers, which need to be downloaded and added to the project's external libraries. GeeksforGeeks explained that different databases require different drivers, and these are not included in the standard JDK to maintain platform independence. The team successfully added a MySQL JDBC driver to their project and confirmed that it was correctly integrated by checking the connection and table creation functionality.
+
+
+Spring Boot Dependency Management
+Nikhil discussed the challenges of managing dependencies in Java projects, particularly when deploying code to remote servers without IDEs. He demonstrated a simple Spring Boot project with CRUD APIs for an Employee Management System, highlighting that even a small project requires around 69 libraries. Nikhil explained how Maven automates dependency management by analyzing project requirements and downloading necessary libraries, including parent dependencies like Protobuf and OCI Java SDK. He also showed the structure of a Maven project, including the POM.xml file that serves as an orchestrator for Maven operations.
+
+
+Build Configuration Files Comparison
+The discussion focused on comparing different build configuration files across various web development frameworks. GeeksforGeeks explained the differences between web.xml (used in JSP servlets) and pom.xml (used in Maven projects), noting that web.xml is obsolete with the advent of Spring and Spring Boot frameworks. The conversation also covered equivalent files in other languages, including package.json for Node.js, gemfile for Ruby on Rails, and requirements.txt for Python's Flask and Django frameworks. The discussion emphasized that these configuration files serve as dependency managers, allowing developers to define external libraries without manually downloading them, and clarified that Maven is a build management tool rather than a framework.
+
+
+Maven Project Structure Overview
+GeeksforGeeks explained the structure of Maven projects, focusing on the group ID, artifact ID, and version. They discussed how these elements contribute to the uniqueness of a project, both open source and proprietary. The group ID represents the organization or entity, the artifact ID is the project name, and the version indicates the release stage of the project. GeeksforGeeks also covered software versioning practices and explained the concept of regulated releases, using Instagram's rollout of Reels as an example.
+
+
+Maven Repository and Dependency Management
+The discussion focused on Maven repositories and dependency management. GeeksforGeeks explained the three types of repositories: local (stored on the user's machine), central (cloud-based containing open-source libraries), and remote (cloud-based for proprietary software). They described how Maven resolves dependencies by first checking the local repository, then remote if configured, and finally central if remote is not configured. The process ends with an error if the dependency is not found. GeeksforGeeks also clarified that remote repositories are typically paid services used by companies for internal dependencies, while central repositories are free for open-source software.
+
+
+Maven Dependency Management Overview
+The instructor explained Maven's dependency management system, demonstrating how it automatically downloads and manages dependencies from local, remote, and central repositories. They showed how Maven handles parent dependencies recursively and discussed the difference between JAR and WAR files. The instructor also covered how to update dependencies and explained the trade-offs between using central vs. remote repositories, including considerations for time and cost. The session concluded with plans to cover Maven lifecycles and plugins in the next class, along with a transition to Spring framework discussions.
