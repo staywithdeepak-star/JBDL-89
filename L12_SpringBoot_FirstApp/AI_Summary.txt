@@ -1,0 +1,52 @@
+Quick recap
+
+The meeting focused on understanding client-server architecture, API calls, and the role of cookies in web applications. GeeksforGeeks explained how front-end systems integrate with back-end servers, emphasizing the importance of understanding network calls and endpoints. The discussion covered the basics of Spring Boot, including its role in building server-side applications and its compatibility with different Java versions. GeeksforGeeks also introduced the Spring Initializer tool for creating Spring Boot projects and explained the significance of packaging types like JAR and WAR. The session concluded with a demonstration of creating a simple Spring Boot application and highlighting the importance of matching Java and Spring Boot versions for compatibility.
+Next steps
+- GeeksforGeeks: Push the code from yesterday's and today's sessions to GitHub after the class
+- GeeksforGeeks: Change password after showing it in plain text during the sign-in API demonstration
+
+
+Summary
+
+Introduction to Spring Boot Development
+
+The instructor began a new session on Spring Boot, explaining the basics of server-side applications and how they differ from standalone Java applications. They discussed the concept of servers as continuously running processes that listen for incoming requests, contrasting this with standalone applications that execute and stop. The instructor also covered the role of full-stack developers, who work on both front-end and back-end systems, and explained various frameworks like Spring Boot, Django, Flask, and Node.js for building server-side applications. They concluded by mentioning that the course would focus on building Spring Boot applications and integrating them with databases and other systems, while leaving out topics like caching and advanced communication channels.
+
+
+Java Development Evolution Overview
+The discussion focused on explaining the evolution of Java application development, particularly the transition from JSP servlets to modern frameworks like Spring Boot. GeeksforGeeks clarified that while legacy JSP technologies are not covered in the course, they will focus on teaching current demand technologies. The conversation then shifted to demonstrating how developers can use browser inspect element tools to troubleshoot both front-end and back-end issues, emphasizing its importance for both front-end and back-end developers in modern web development.
+
+
+Web Development Debugging Tools Explained
+The discussion focused on explaining web development concepts, particularly how web pages are constructed and how developers can inspect them using browser tools. The speaker explained that front-end developers use the Sources, Network, and Console tabs for debugging, while back-end developers primarily use the Network tab to monitor request-response interactions between the front-end and back-end. They detailed how URLs are structured, explaining that an endpoint consists of a DNS (domain name server) and a path, and demonstrated this concept using examples from Google, GeeksforGeeks, and LinkedIn.
+
+
+URLs and HTTP Fundamentals
+The instructor explained the structure of URLs, including DNS and paths, and discussed HTTP request methods such as GET, POST, PUT, and DELETE. They covered how servers respond with status codes and how to interpret response headers, preview, and response data. The instructor also explained cookies, including their purpose and how they are used for authentication and personalization, and demonstrated how JWT tokens work by showing an example from 
+GeeksforGeeks.
+
+
+Local Storage and Performance Testing
+The discussion covered how to clear local storage on devices for web and mobile apps, explaining that this data is stored on the client side and can be cleared to free up space, though this may log users out. The conversation then moved to performance and memory testing tools used by front-end developers, including Lighthouse for analyzing page load times and the Recorder for capturing and analyzing user interactions. Finally, the speaker explained the basics of client-server architecture, DNS, and endpoints, noting that these concepts apply across different frameworks like Spring Boot, Django, and Node.js, and invited questions before taking a break.
+
+
+Understanding Cookies in Web Apps
+The discussion focused on how cookies work and their role in web applications. GeeksforGeeks explained that cookies are stored in the browser and persist unless explicitly deleted, with an optional expiration date that defaults to session-based if not specified. They clarified that cookies are used for user authentication and personalization, not for sharing data with third parties, though websites often share anonymized data with companies like Google Analytics for advertising purposes. Theja asked about stateless server requests, and GeeksforGeeks demonstrated how cookies enable the server to identify authenticated users without requiring repeated login, using a practical example of a user interface that changes based on authentication status.
+
+
+Stateless vs Stateful Client-Server Communication
+The discussion focused on the differences between stateless and stateful client-server communication paradigms, with GeeksforGeeks explaining that REST APIs are stateless while SOAP APIs are stateful, noting that security companies like Palo Alto Networks often use SOAP APIs for user journey tracking. The conversation then addressed how cookies are used for user authentication, with GeeksforGeeks demonstrating that cookies are created by the server and stored in the user's browser, allowing the server to identify returning users through a mapping system that associates cookies with user data. Tanuja raised a question about how cookies work across different user sessions, which GeeksforGeeks explained through a detailed demonstration of how cookies are created and managed during login and logout processes.
+
+
+Cookies and Gradle Overview
+GeeksforGeeks explained the concept of cookies and their role in client-server communication, emphasizing how the backend sets cookies that the frontend stores and sends in subsequent requests. Tanuja clarified questions about cookies' behavior across different browser modes, and GeeksforGeeks clarified that cookies are stored regardless of incognito mode but are deleted when the incognito window is closed. The discussion concluded with an overview of Gradle, a build tool similar to Maven, and its use in creating and managing project dependencies.
+
+Comparing Maven and Gradle Tools
+The discussion covered the similarities and differences between Maven and Gradle build tools, noting that while Maven is more commonly used for server-side applications, Gradle is preferred for client-side projects like Android. The instructor recommended Maven due to its simpler syntax, though both tools share a similar structure and repository system. The conversation then shifted to creating Spring Boot projects, where the instructor explained that while IntelliJ's community version doesn't support creating Spring Boot projects from scratch, the Spring Initializr website offers a free alternative to the paid IntelliJ Ultimate Edition. The instructor also detailed the compatibility requirements between Spring Boot versions and Java versions, explaining that Spring Boot 2.x requires Java 8-11, 3.x requires Java 17, and 4.x requires Java 17 or later.
+
+
+Spring Boot Java Version Compatibility
+The discussion focused on Spring Boot version compatibility with Java versions. GeeksforGeeks explained that while Spring Boot 3.5.9 was the latest stable version in the 3.x series, users can choose between 3.5.9 or 4.0.1 for production environments, with snapshot versions being unstable. Theja asked about Java version compatibility with vendors like Amazon Corretto, to which GeeksforGeeks clarified that Java versions are universal while vendors provide different JDK implementations. The conversation concluded with an explanation of bytecode version compatibility between Spring Boot and Java versions, demonstrating how incorrect version combinations can cause compilation errors.
+
+Java Server vs Standalone Applications
+The instructor explained the difference between running a Java application as a server versus a standalone application, demonstrating how adding a web dependency like Spring Boot Starter Web enables continuous server operation with Tomcat. They discussed how to switch Java versions in IntelliJ and explained that while POM XML doesn't specify vendors, Docker files do when deploying applications. The instructor agreed to push the day's code to GitHub and will continue discussing Spring web application concepts in the next class.

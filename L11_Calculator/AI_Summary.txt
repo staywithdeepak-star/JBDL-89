@@ -1,0 +1,57 @@
+Quick recap
+
+The meeting focused on explaining Maven, a build automation tool, including its lifecycle phases, plugins, and repository management. GeeksforGeeks provided a comprehensive overview of Maven's functionality, covering topics such as the clean, compile, test, package, install, and deploy phases, as well as the use of plugins to execute specific tasks. The discussion also included the importance of the local and central repositories for managing dependencies and the process of deploying artifacts to remote repositories. Participants asked questions about the use of default and protected access modifiers in Maven projects, and GeeksforGeeks clarified how these affect the visibility of classes across packages. The session concluded with an explanation of archetypes, which are templates for creating new Maven projects, and participants were encouraged to explore Maven further on their own.
+
+
+Next steps
+- GeeksforGeeks: Push the code from this session to GitHub for reference.
+
+Summary
+
+Maven Lifecycle Phases Explained
+The instructor provided a detailed explanation of Maven's lifecycle phases, starting with a recap of last week's discussion on Maven's dependency resolution. They demonstrated the different Maven lifecycle phases, explaining that these phases are sequential and essential for building projects. The instructor also compared a project built with Maven to one without it, highlighting the differences in the target folder structure and the role of the clean phase in deleting the target folder. They concluded by asking the audience about the validate phase, but the question was not answered in the transcript.
+
+
+Maven Build Lifecycle Overview
+The discussion explained Maven's build lifecycle phases, focusing on validate and compile. The validate phase checks project structure and POM.xml configuration, while the compile phase compiles main source code, downloads dependencies, and creates a target folder with bytecode. It was clarified that the compile phase only compiles main directory code, not test directory code, and that test classes are stored in a separate directory under target.
+
+
+Maven Build Lifecycle Overview
+The instructor explained Maven's build lifecycle phases, focusing on the main and test directories. They demonstrated how the compile and test phases work, including the execution of unit test cases. The instructor also covered the package phase, which creates a JAR or WAR file in the target folder for deployment or use as a dependency in other projects. They compared JAR files to zip files and explained their structure, including the main and test directories within them.
+
+
+JAR File Deployment Process
+GeeksforGeeks explained the process of deploying a JAR file, emphasizing that dependencies are downloaded from Maven's central repository when the application is run on a remote server. They clarified that remote repositories are used for storing artifacts, while version control systems like Git are essential for managing code changes. The deployment process involves three steps: pulling the latest code, building the project with any new dependencies, and running the Java application. GeeksforGeeks stressed that these steps are crucial for Java-related projects and are typically part of a deployment pipeline.
+
+
+Maven Build Phases Explained
+The discussion focused on explaining Maven build phases, starting from validate to deploy. The speaker explained that the package phase creates a JAR file, while the install phase not only packages but also installs the project into the local M2 repository. The site phase generates project documentation, and the deploy phase is used to push artifacts to remote repositories, though this is not commonly needed for startups. The speaker also clarified that the clean phase must be explicitly called when needed, and demonstrated how to configure remote repositories in Maven settings.xml.
+
+
+Maven Lifecycle Phases Explained
+The discussion focused on Maven's lifecycle phases and their practical applications. GeeksforGeeks explained the difference between maven clean package and maven package, highlighting that clean deletes the target folder before building, while package only compiles and packages without cleaning. They also clarified that Maven is pre-bundled with IntelliJ but must be installed locally to run commands outside the IDE. The conversation concluded with a question about the install phase, which deposits built artifacts in the local M2 repository, useful for dependency management and sharing within projects.
+
+
+Maven Local Repository Management
+The discussion focused on Maven dependency management and the use of local repositories. GeeksforGeeks explained how Maven resolves dependencies by first checking the local repository, then remote repositories, and finally central repositories. They demonstrated the process of adding a calculator project as a dependency in a rule engine project, showing how to install the calculator project to the local repository using Maven install. The key takeaways were that local repositories are useful when projects need to reference each other but cannot be pushed to central repositories, and Maven will not find dependencies that are not present in the local repository.
+
+
+Maven Dependency and Visibility Management
+The discussion focused on understanding how to manage dependencies and visibility of classes in a Maven project. GeeksforGeeks explained that changes to a parent project, like adding a new method to a calculator class, require running maven install to update the local repository, making the changes accessible to dependent projects. They also demonstrated that making a class default (package-private) instead of public restricts its visibility outside the package, which is important for projects with external dependencies.
+
+
+Java Access Modifiers and Maven
+The discussion focused on Java access modifiers and Maven plugins. GeeksforGeeks explained that protected access is only available to subclasses within the same package, while default (package-private) access is not visible outside the package. They also described Maven plugins as entities that perform specific tasks during the build process, using the clean plugin as an example to demonstrate how plugins execute goals like cleaning the target folder.
+
+
+Maven Plugins and Build Lifecycle
+The discussion focused on Maven plugins and their roles in the build lifecycle. GeeksforGeeks explained how plugins are executed during different phases like compile, test, package, and install, with specific examples of plugins like clean, compiler, surefire, and JAR. They emphasized that each lifecycle phase can call multiple plugins, with goals being atomic steps that Maven performs. The conversation also touched on additional plugins like 
+Lombok and the Spring Boot Maven plugin, highlighting their functionalities.
+
+
+Maven Deploy Plugin Configuration
+The discussion focused on understanding Maven plugins, particularly the Deploy plugin and its distribution management functionality. GeeksforGeeks explained that the Deploy plugin fails when it cannot find the repository element in pom.xml, as it requires remote repository configuration. They also discussed other plugins, including a Git-related pre-commit hook plugin that performs validations before committing changes. The session concluded with an announcement that the next class would begin Spring Boot basics, focusing on creating small applications and understanding client-server communication.
+
+
+Maven Archetypes and Project Basics
+The meeting focused on explaining Maven archetypes, which are a combination of group ID, artifact ID, and version used to create projects from existing templates. GeeksforGeeks clarified that while archetypes are optional, specifying a parent like Spring Boot Starter Parent is sufficient for creating Spring Boot projects. The discussion also addressed questions about JAR files and POM XML files, with GeeksforGeeks explaining that JAR files contain only source code, not POM files. The session concluded with a brief overview of Maven concepts, including plugins, lifecycles, and repositories, and a note that the next topic would be Spring Boot starting the following day.
