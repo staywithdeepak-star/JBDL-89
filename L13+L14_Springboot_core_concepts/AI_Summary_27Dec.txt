@@ -1,0 +1,42 @@
+Quick recap
+The meeting focused on understanding Spring Boot's architecture and how it handles web requests. The instructor explained the difference between web servers and standalone applications, demonstrating how Spring Boot uses embedded servers like Tomcat, Jetty, and Undertow. They covered the basics of MVC architecture, including models, views, and controllers, and showed how Spring Boot maps HTTP requests to controller methods using reflection. The instructor also discussed logging levels and formats in Spring Boot applications. The session concluded with an overview of how Spring Boot creates objects for controllers and other components, introducing the concepts of Inversion of Control (IoC) and Dependency Injection (DI) for the next day's discussion.
+
+Next steps
+- GeeksforGeeks: Push the demo code to the shared repository after the class.
+
+Summary
+
+Spring Boot Project Basics Overview
+The instructor discussed creating a new Spring Boot project from start.spring.io, including dependencies like Lombok and web, and explained the structure of pom.xml. They covered the concept of embedded servers, using Tomcat as an example, and explained how ports work in networking. The instructor also introduced the OSI model of networking and described how data is transferred between sender and receiver at different layers.
+
+
+Spring Boot Email Server Protocols
+The discussion focused on email transfer protocols and embedded servers in Spring Boot applications. GeeksforGeeks explained how different protocols like SMTP, IMAP, and POP operate on specific ports, and described how embedded servers like Tomcat, Jetty, and Undertow work within Spring Boot applications. They detailed how Spring Boot abstracts away the complexity of server configuration and socket connections through dependencies like Spring Boot Starter Tomcat, allowing developers to focus on business logic. The conversation concluded with an explanation of how Spring Boot applications run on embedded servers that continuously listen for requests, passing them to the Java virtual machine for processing.
+
+
+Spring Boot Framework Overview
+GeeksforGeeks explained that Spring Boot is not a server but a framework that integrates with servers like Tomcat, Jetty, or Undertow, making it easier for developers by eliminating the need to write connections and boilerplate code. He clarified that the Dispatcher Servlet is an entity within the embedded server that listens for requests, and he discussed the concept of embedded servers and how they differ from standalone servers. GeeksforGeeks also explained the format of logs produced by Spring Boot applications, including the levels of logs (from error to trace) and their significance, as well as the components of a log entry such as the timestamp, process ID, thread name, and project name.
+
+
+Java Multi-threading and Server Options
+The discussion focused on multi-threading in Java applications and the different embedded servers available in Spring Boot. The speaker explained how threads are allocated and managed in servers, highlighting the relationship between the number of cores and parallel threads. They demonstrated how to switch between different servers like Tomcat, Jetty, and Undertow, and showed how to exclude unnecessary dependencies. The speaker also covered Spring Boot's shutdown hook functionality and logging formats, including how to customize them using a logback.xml file.
+
+
+Spring Web MVC Server Priorities
+Theja explained the priority order of embedded servers in Spring Web MVC, where Tomcat is the default, followed by Jetty and Undertow. He demonstrated that if Tomcat is present, it will run, otherwise Spring will try Jetty, and if both are absent, it will attempt to use Undertow, with an error if none are available. Theja also clarified that Spring Web MVC itself doesn't perform server operations, serving instead as an orchestrator for embedded containers, and provided an overview of the MVC architecture, defining model as a real-world entity representation, view as the user interface, and controller as the component handling user requests and interacting with the model.
+
+
+Client-Server Communication Process Overview
+The discussion explained the client-server communication process, focusing on how DNS, endpoints, and request headers work. The speaker described how clients send requests to servers, which are directed to dispatcher servlets that map URLs to specific controller classes and methods. They explained that controllers handle different types of API calls, such as cart management or account operations, and register their endpoints with the dispatcher servlet for routing purposes.
+
+
+Spring Boot REST Endpoint Configuration
+The discussion focused on how Spring Boot handles REST endpoints without requiring explicit configuration in XML files, instead using annotations like @RestController to automatically register functions with the dispatcher servlet. The instructor demonstrated how the DispatcherServlet uses reflection to dynamically discover and map controller classes and their methods, showing a complete example of a PersonController that returns a list of people from a HashMap. The instructor also explained how the DispatcherServlet matches incoming requests to the appropriate handler methods using path prefixes and reflection API, concluding with a live demonstration of the application running and handling requests.
+
+
+Tomcat HTTP Request Processing
+Theja explained how HTTP requests are processed in a Tomcat server, highlighting the role of the Dispatcher Servlet which handles requests in separate threads. He demonstrated that each request creates a new thread from a thread pool, showing logs that prove the servlet initializes in the main thread but processes requests in separate threads. The discussion concluded with a question about how non-static methods are called without creating an object, which Theja addressed by showing that the object is indeed created in the main thread through the default constructor.
+
+
+Spring Boot Controller Annotations Overview
+The discussion focused on understanding how Spring Boot creates objects and the importance of annotations in controller classes. It was explained that the dispatcher servlet maintains visibility of controllers and their functions, but objects can be created by different annotations. The instructor emphasized the core concepts of Spring Boot: Inversion of Control (IOC) and Dependency Injection (DI), which will be discussed in detail in the next session. They also explained how request mappings work and promised to push the code after the class for further review.
